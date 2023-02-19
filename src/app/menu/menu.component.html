@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">LIFE HEALTH</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link  active" *ngIf="!isLogeed" routerLink="/" aria-current="page" href="/">INICIO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" *ngIf="!isLogeed" routerLink="/sobrenosotros">SOBRE NOSOTROS
+          </a>
+        </li>
+        <li class="nav-item">
+          <button type="button" *ngIf="!isLogeed" class="btn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            CONTACTANOS
+          </button>
+        </li>
+      </ul>
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <button type="button" *ngIf="!isLogeed" class="btn  text-body m-1">
+          <a class="text-body text-decoration-none" routerLink="/registro">REGISTRO</a></button>
+        <button type="button" *ngIf="!isLogeed" class="btn  text-body ">
+          <a class="text-body text-decoration-none" routerLink="/login">INICIO SESSION</a></button>
+      </form>
+      <div class="text-end" *ngIf="!isLogeed">
+        <input type="search" class="form-control " placeholder="Search..." aria-label="Search">
+      </div>
+      <div class="dropdown text-end me-2" *ngIf="isLogeed">
+        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <img src="{{userLogged?.response.picture.data.url}}" alt="Foto perfil" width="32" height="32"
+            class="rounded-circle">
+          {{userLogged?.name}}
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end ">
+          <li><a class="dropdown-item" href="#">New project...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" (click)="logOut()">CERRA
+              SESSION</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+ <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">CONTACTANOS</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="recipient-email" class="col-form-label">Correo Electronico</label>
+                  <input type="text" class="form-control" id="recipient-email">
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Mensaje</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
