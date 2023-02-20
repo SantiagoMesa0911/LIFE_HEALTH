@@ -1,15 +1,21 @@
 <app-menu></app-menu>
 <div class="container">
-  <div class="row g-3">
-    <div class="px-4 my-5 text-center">
-      <img class="d-block mx-auto mb-4 rounded rounded-circle border-secondary border border-5 "
-        src="{{userLogged?.response.picture.data.url}}" alt="" width="200" height="200">
-    </div>
-    <div class="col-md-6">
-      <input type="text" class="form-control" placeholder="" >
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+  <div class="row g-3 text-center">
+    <div class="px-4 my-5 ">
+      <img class="rounded rounded-circle " src="{{userLogged?.response.picture.data.url}}" alt="" width="300"
+        height="320">
     </div>
   </div>
 </div>
+<div>
+  <div class="container p-5">
+    <div class="row justify-content-center align-items-center g-3">
+      <input type="text" class="form-control" value="{{userLogged?.firstName}}">
+
+      <input type="text" class="form-control" value="{{userLogged?.lastName}}">
+
+      <input type="text" class="form-control" value="{{userLogged?.email}}">
+
+      <input type="text" class="form-control" value="LOGUADO CON {{userLogged?.provider}}">
+    </div>
+  </div>

@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SaludMentalComponent } from './salud-mental/salud-mental.component';
 import { SaludEspiritualComponent } from './salud-espiritual/salud-espiritual.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ComunidadComponent } from './comunidad/comunidad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { ProfileComponent } from './profile/profile.component';
     SaludMentalComponent,
     SaludEspiritualComponent,
     ProfileComponent,
+    ComunidadComponent,
   ],
   imports: [
     BrowserModule,
